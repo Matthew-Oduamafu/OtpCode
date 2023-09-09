@@ -1,5 +1,7 @@
 using OtpCode.Api.Extensions;
 using OtpCode.Api.Options;
+using OtpCode.Api.Services.Providers;
+using Twilio.Clients;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,9 +10,13 @@ const string corsPolicyName = "OtpCode.Api.PolicyName";
 // Add services to the container.
 builder.Services.Configure<OtpCodeConfig>(c =>
     builder.Configuration.GetSection(nameof(OtpCodeConfig)).Bind(c));
+builder.Services.Configure<TwilioConfig>(c =>
+    builder.Configuration.GetSection(nameof(TwilioConfig)).Bind(c));
 builder.Services.AddDatabaseConfiguration();
 builder.Services.AddRepositories();
 builder.Services.AddServices();
+
+builder.Services.AddHttpClient<ITwilioRestClient, TwilioClient>();
 
 
 builder.Services.AddControllerConfiguration();
@@ -34,11 +40,12 @@ var app = builder.Build();
     if (app.Environment.IsDevelopment())
     {
         app.UseDeveloperExceptionPage();
-    }else
+    }
+    else
     {
         app.UseCustomExceptionHandler(logger);
     }
-    
+
     app.UseSwaggerDocumentation();
 
     app.UseCors(corsPolicyName);

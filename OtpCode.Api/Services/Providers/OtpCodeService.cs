@@ -12,14 +12,16 @@ public class OtpCodeService : IOtpCodeService
     private readonly ILogger<OtpCodeService> _logger;
     private readonly OtpCodeConfig _otpCodeConfig;
     private readonly IOtpCodeRepository _otpCodeRepository;
+    private readonly ISendSmsService _sendSmsService;
 
     public OtpCodeService(ILogger<OtpCodeService> logger,
         IOptions<OtpCodeConfig> options,
-        IOtpCodeRepository otpCodeRepository)
+        IOtpCodeRepository otpCodeRepository, ISendSmsService sendSmsService)
     {
         _logger = logger;
         _otpCodeConfig = options.Value;
         _otpCodeRepository = otpCodeRepository;
+        _sendSmsService = sendSmsService;
     }
 
     public async Task<IApiResponse<GenerateOtpCodeRequest>> GenerateOtpCodeAsync(GenerateOtpCodeRequest request)
@@ -30,12 +32,14 @@ public class OtpCodeService : IOtpCodeService
             var otpEntry = await _otpCodeRepository.GetLatestUnusedOtpForPhoneNumber(request.PhoneNumber);
             if (otpEntry != null)
             {
-                if (otpEntry.IsUsed && otpEntry.ExpiryDate < DateTime.UtcNow)
+                if (!otpEntry.IsUsed && otpEntry.ExpiryDate > DateTime.UtcNow)
                 {
-                    request.ToOkApiResponse();
+                    await _sendSmsService.SendSmsAsync(otpEntry.PhoneNumber,
+                        $"Your OTP code is {otpEntry.OtpCode}. It will expire in {_otpCodeConfig.OtpCodeExpirationTime} minutes.");
+                   return request.ToOkApiResponse();
                 }
             }
-            
+
             var code = Utils.GenerateNumericOtp(_otpCodeConfig.OtpCodeLength);
             var newOtpEntry = new Data.Entities.OtpEntry
             {
@@ -49,7 +53,9 @@ public class OtpCodeService : IOtpCodeService
                 InvalidAttempts = 0
             };
             await _otpCodeRepository.SaveOtp(newOtpEntry);
-
+            
+            await _sendSmsService.SendSmsAsync(newOtpEntry.PhoneNumber,
+                $"Your OTP code is {newOtpEntry.OtpCode}. It will expire in {_otpCodeConfig.OtpCodeExpirationTime} minutes.");
             return request.ToOkApiResponse();
         }
         catch (Exception ex)
@@ -64,24 +70,26 @@ public class OtpCodeService : IOtpCodeService
         try
         {
             var otpEntry = await _otpCodeRepository.GetLatestUnusedOtpForPhoneNumber(request.PhoneNumber);
-            if (otpEntry == null)
+            if (otpEntry != null)
             {
-                return ApiResponse<GenerateOtpCodeRequest>.Default.ToNotFoundApiResponse();
-            }
-
-            if (otpEntry.InvalidAttempts >= 3)
-            {
-                return ApiResponse<GenerateOtpCodeRequest>.Default.ToBadRequestApiResponse("Exceeded maximum number of invalid attempts.");
-            }
-
-            if (otpEntry.IsUsed)
-            {
-                return ApiResponse<GenerateOtpCodeRequest>.Default.ToBadRequestApiResponse("OTP code has already been used.");
-            }
-
-            if (otpEntry.ExpiryDate < DateTime.UtcNow)
-            {
-                return ApiResponse<GenerateOtpCodeRequest>.Default.ToBadRequestApiResponse("OTP code has expired.");
+                if (otpEntry.InvalidAttempts >= 3)
+                {
+                    return ApiResponse<GenerateOtpCodeRequest>.Default.ToBadRequestApiResponse(
+                        "Exceeded maximum number of invalid attempts.");
+                }
+                if (otpEntry.IsUsed)
+                {
+                    return ApiResponse<GenerateOtpCodeRequest>.Default.ToBadRequestApiResponse(
+                        "OTP code has already been used.");
+                }
+                if (otpEntry.ExpiryDate < DateTime.UtcNow)
+                {
+                    return ApiResponse<GenerateOtpCodeRequest>.Default.ToBadRequestApiResponse("OTP code has expired.");
+                }
+                
+                await _sendSmsService.SendSmsAsync(otpEntry.PhoneNumber,
+                    $"Your OTP code is {otpEntry.OtpCode}. It will expire in {_otpCodeConfig.OtpCodeExpirationTime} minutes.");
+                return request.ToOkApiResponse();
             }
 
             var code = Utils.GenerateNumericOtp(_otpCodeConfig.OtpCodeLength);
@@ -91,6 +99,8 @@ public class OtpCodeService : IOtpCodeService
             otpEntry.UpdatedAt = DateTime.UtcNow;
             await _otpCodeRepository.UpdateOtpEntry(otpEntry);
 
+            await _sendSmsService.SendSmsAsync(otpEntry.PhoneNumber,
+                $"Your OTP code is {otpEntry.OtpCode}. It will expire in {_otpCodeConfig.OtpCodeExpirationTime} minutes.");
             return request.ToOkApiResponse();
         }
         catch (Exception ex)
@@ -112,12 +122,14 @@ public class OtpCodeService : IOtpCodeService
 
             if (otpEntry.InvalidAttempts >= 3)
             {
-                return ApiResponse<VerifyOtpCodeRequest>.Default.ToBadRequestApiResponse("Exceeded maximum number of invalid attempts.");
+                return ApiResponse<VerifyOtpCodeRequest>.Default.ToBadRequestApiResponse(
+                    "Exceeded maximum number of invalid attempts.");
             }
 
             if (otpEntry.IsUsed)
             {
-                return ApiResponse<VerifyOtpCodeRequest>.Default.ToBadRequestApiResponse("OTP code has already been used.");
+                return ApiResponse<VerifyOtpCodeRequest>.Default.ToBadRequestApiResponse(
+                    "OTP code has already been used.");
             }
 
             if (otpEntry.ExpiryDate < DateTime.UtcNow)

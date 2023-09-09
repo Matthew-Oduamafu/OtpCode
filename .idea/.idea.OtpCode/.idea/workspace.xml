@@ -9,9 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44dd1c9a-d17b-4130-9e86-4bf6676822d3" name="Changes" comment="">
+    <list default="true" id="44dd1c9a-d17b-4130-9e86-4bf6676822d3" name="Changes" comment="fix">
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Options/TwilioConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Services/Interfaces/ISendSmsService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Services/Providers/SendSmsService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Services/Providers/TwilioClient.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OtpCode/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OtpCode/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Extensions/ServiceCollectionExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Extensions/ServiceCollectionExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtpCode.Api/OtpCode.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/OtpCode.Api.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OtpCode.Api/Services/Providers/OtpCodeService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Services/Providers/OtpCodeService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtpCode.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,11 +30,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/a4846fc11ceb4f9f92b0d8af3123a36c54ec00/30/fe58d3c9/MessageResource.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f237a55ab16d4649b96170604924f6b94bf450/6e/0f0757d4/DbMigration.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f237a55ab16d4649b96170604924f6b94bf450/a2/6a25d9d6/IDbMigration.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f245cf881f97452cb8c1b0e94d54df4e318a0/12/8694643b/DynamicServiceProviderEngine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/bd1d5c50194fea68ff3559c160230b0ab50f5acf4ce3061bffd6d62958e2182/ExceptionDispatchInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/eeaf281031b3ffe3d44a91e71a5808c8d236a9caabbb947871e6dc415bd8b/Migration.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/Projects/3.OtpCode/OtpCode/OtpCode.Api/Services/Providers/OtpCodeService.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -117,7 +127,7 @@
       <option name="presentableId" value="Default" />
       <updated>1694208262723</updated>
       <workItem from="1694208264941" duration="28343000" />
-      <workItem from="1694278004496" duration="1456000" />
+      <workItem from="1694278004496" duration="6245000" />
     </task>
     <task id="LOCAL-00001" summary="add migration&#10;&#10;&#10;configured database setup&#10;run migrations">
       <option name="closed" value="true" />
@@ -151,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694264707256</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix">
+      <option name="closed" value="true" />
+      <created>1694293281115</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1694293281115</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,25 +182,7 @@
     <MESSAGE value="add stored proc&#10;&#10;&#10;Add stored for insert, update, get using code first approach" />
     <MESSAGE value="add otp endpoints&#10;&#10;&#10;setup otp controllers&#10;endpoint to send, resend and confirm added and working fine" />
     <MESSAGE value="valid phone number&#10;&#10;&#10;added phone number validation&#10;added country code&#10;add middlewares" />
-    <option name="LAST_COMMIT_MESSAGE" value="valid phone number&#10;&#10;&#10;added phone number validation&#10;added country code&#10;add middlewares" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/OtpCode.Api/Services/Providers/OtpCodeService.cs</url>
-          <line>65</line>
-          <properties documentPath="D:\Projects\3.OtpCode\OtpCode\OtpCode.Api\Services\Providers\OtpCodeService.cs" initialLine="54" containingFunctionPresentation="Method 'ResendOtpCodeAsync'">
-            <startOffsets>
-              <option value="2381" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2475" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
 </project>
