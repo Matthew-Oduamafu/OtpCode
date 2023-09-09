@@ -26,10 +26,21 @@ public class OtpCodeService : IOtpCodeService
     {
         try
         {
+            // check if there is any unused otp code for this phone number
+            var otpEntry = await _otpCodeRepository.GetLatestUnusedOtpForPhoneNumber(request.PhoneNumber);
+            if (otpEntry != null)
+            {
+                if (otpEntry.IsUsed && otpEntry.ExpiryDate < DateTime.UtcNow)
+                {
+                    request.ToOkApiResponse();
+                }
+            }
+            
             var code = Utils.GenerateNumericOtp(_otpCodeConfig.OtpCodeLength);
             var newOtpEntry = new Data.Entities.OtpEntry
             {
                 PhoneNumber = request.PhoneNumber,
+                CountryCode = request.CountryCode,
                 OtpCode = code,
                 CreatedDate = DateTime.UtcNow,
                 ExpiryDate = DateTime.UtcNow.AddMinutes(_otpCodeConfig.OtpCodeExpirationTime),

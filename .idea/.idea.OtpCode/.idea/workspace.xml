@@ -10,34 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44dd1c9a-d17b-4130-9e86-4bf6676822d3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/OtpCode.Api/CustomAttributes/ValidPhoneNumberAttribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OtpCode.Api/CustomMiddlewares/ExceptionMiddleware.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Extensions/ExceptionMiddlewareExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Models/ExceptionDetails.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OtpCode/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OtpCode/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/CommonConstants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/CommonConstants.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Controllers/OtpController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Controllers/OtpController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Data/Entities/OtpEntry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Data/Entities/OtpEntry.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Extensions/ServiceCollectionExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Extensions/ServiceCollectionExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230909000217_Initial_Migration.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230909125902_Initial_Migration.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230909000217_Initial_Migration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230909125902_Initial_Migration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230909000331_Add_Stored_proc.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230909000331_Add_Stored_proc.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230909001414_Add_More_Stored_Proc.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230909001414_Add_More_Stored_Proc.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230909002537_Add_GetOtp_Stored_Proc.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230909002537_Add_GetOtp_Stored_Proc.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230909005121_Added_UpdatedAt_Field_To_OtpEntry_Entity.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230909005121_Added_UpdatedAt_Field_To_OtpEntry_Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230909130009_Add_Stored_Proc.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230909005812_Modify_Update_Stored_Proc_To_Include_UpdatedAt.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230909130009_Add_Stored_Proc.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230909005812_Modify_Update_Stored_Proc_To_Include_UpdatedAt.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Models/Dtos/GenerateOtpCodeRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Models/Dtos/GenerateOtpCodeRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Models/Dtos/VerifyOtpCodeRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Models/Dtos/VerifyOtpCodeRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/OtpCode.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/OtpCode.Api.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Repositories/Providers/OtpCodeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Repositories/Providers/OtpCodeRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Utils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Utils.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Services/Providers/OtpCodeService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Services/Providers/OtpCodeService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,9 +29,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/eeaf281031b3ffe3d44a91e71a5808c8d236a9caabbb947871e6dc415bd8b/Migration.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2V8CL1IGxlvoyzt4OFoypErA9LA" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -66,28 +40,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\matto\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
-      "C:\\Users\\matto\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
-      "C:\\Users\\matto\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\matto\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\matto\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\matto\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.OtpCode.Api: http">
+}</component>
+  <component name="RunManager" selected=".NET Launch Settings Profile.OtpCode.Api: https">
     <configuration name="OtpCode.Api: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/OtpCode.Api/OtpCode.Api.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net7.0" />
@@ -142,7 +116,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1694208262723</updated>
-      <workItem from="1694208264941" duration="25991000" />
+      <workItem from="1694208264941" duration="28343000" />
+      <workItem from="1694278004496" duration="1456000" />
     </task>
     <task id="LOCAL-00001" summary="add migration&#10;&#10;&#10;configured database setup&#10;run migrations">
       <option name="closed" value="true" />
@@ -168,7 +143,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694227228056</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="valid phone number&#10;&#10;&#10;added phone number validation&#10;added country code&#10;add middlewares">
+      <option name="closed" value="true" />
+      <created>1694264707256</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1694264707256</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,20 +163,21 @@
     <MESSAGE value="add migration&#10;&#10;&#10;configured database setup&#10;run migrations" />
     <MESSAGE value="add stored proc&#10;&#10;&#10;Add stored for insert, update, get using code first approach" />
     <MESSAGE value="add otp endpoints&#10;&#10;&#10;setup otp controllers&#10;endpoint to send, resend and confirm added and working fine" />
-    <option name="LAST_COMMIT_MESSAGE" value="add otp endpoints&#10;&#10;&#10;setup otp controllers&#10;endpoint to send, resend and confirm added and working fine" />
+    <MESSAGE value="valid phone number&#10;&#10;&#10;added phone number validation&#10;added country code&#10;add middlewares" />
+    <option name="LAST_COMMIT_MESSAGE" value="valid phone number&#10;&#10;&#10;added phone number validation&#10;added country code&#10;add middlewares" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/OtpCode.Api/Services/Providers/OtpCodeService.cs</url>
-          <line>54</line>
+          <line>65</line>
           <properties documentPath="D:\Projects\3.OtpCode\OtpCode\OtpCode.Api\Services\Providers\OtpCodeService.cs" initialLine="54" containingFunctionPresentation="Method 'ResendOtpCodeAsync'">
             <startOffsets>
-              <option value="1912" />
+              <option value="2381" />
             </startOffsets>
             <endOffsets>
-              <option value="2006" />
+              <option value="2475" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="3" />
