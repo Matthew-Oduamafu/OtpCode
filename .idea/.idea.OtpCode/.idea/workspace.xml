@@ -9,17 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44dd1c9a-d17b-4130-9e86-4bf6676822d3" name="Changes" comment="fix">
-      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Options/TwilioConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Services/Interfaces/ISendSmsService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Services/Providers/SendSmsService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Services/Providers/TwilioClient.cs" afterDir="false" />
+    <list default="true" id="44dd1c9a-d17b-4130-9e86-4bf6676822d3" name="Changes" comment="add twilio sms&#10;&#10;&#10;added and configured twilio for sending sms">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OtpCode/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OtpCode/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Extensions/ServiceCollectionExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Extensions/ServiceCollectionExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/OtpCode.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/OtpCode.Api.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Services/Providers/OtpCodeService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Services/Providers/OtpCodeService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +118,7 @@
       <option name="presentableId" value="Default" />
       <updated>1694208262723</updated>
       <workItem from="1694208264941" duration="28343000" />
-      <workItem from="1694278004496" duration="6245000" />
+      <workItem from="1694278004496" duration="7321000" />
     </task>
     <task id="LOCAL-00001" summary="add migration&#10;&#10;&#10;configured database setup&#10;run migrations">
       <option name="closed" value="true" />
@@ -169,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694293281115</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add twilio sms&#10;&#10;&#10;added and configured twilio for sending sms">
+      <option name="closed" value="true" />
+      <created>1694299392845</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1694299392845</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,6 +182,7 @@
     <MESSAGE value="add otp endpoints&#10;&#10;&#10;setup otp controllers&#10;endpoint to send, resend and confirm added and working fine" />
     <MESSAGE value="valid phone number&#10;&#10;&#10;added phone number validation&#10;added country code&#10;add middlewares" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="add twilio sms&#10;&#10;&#10;added and configured twilio for sending sms" />
+    <option name="LAST_COMMIT_MESSAGE" value="add twilio sms&#10;&#10;&#10;added and configured twilio for sending sms" />
   </component>
 </project>
