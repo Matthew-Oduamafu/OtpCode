@@ -11,8 +11,8 @@ using OtpCode.Api.Data;
 namespace OtpCode.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230909001414_Add_More_Stored_Proc")]
-    partial class AddMoreStoredProc
+    [Migration("20230909125902_Initial_Migration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,6 +27,10 @@ namespace OtpCode.Api.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("varchar(36)");
+
+                    b.Property<string>("CountryCode")
+                        .IsRequired()
+                        .HasColumnType("varchar(3)");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime(6)");
@@ -53,6 +57,9 @@ namespace OtpCode.Api.Migrations
 
                     b.Property<string>("Purpose")
                         .HasColumnType("varchar(50)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime(6)");
 
                     b.HasKey("Id");
 

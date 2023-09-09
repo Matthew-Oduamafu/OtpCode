@@ -20,6 +20,7 @@ public class OtpCodeRepository : GenericSpcRepository, IOtpCodeRepository
         {
             p_Id = otpEntry.Id,
             p_PhoneNumber = otpEntry.PhoneNumber,
+            p_CountryCode = otpEntry.CountryCode,  // Added this line
             p_OtpCode = otpEntry.OtpCode,
             p_CreatedDate = otpEntry.CreatedDate,
             p_ExpiryDate = otpEntry.ExpiryDate,

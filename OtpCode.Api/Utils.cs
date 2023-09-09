@@ -1,5 +1,6 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
+using PhoneNumbers;
 
 namespace OtpCode.Api;
 
@@ -19,5 +20,22 @@ public static class Utils
         }
 
         return result.ToString();
+    }
+    
+    public static bool IsValid(string phoneNumber, string countryCode)
+    {
+        try
+        {
+            var number = PhoneNumberUtil.GetInstance().Parse(phoneNumber, countryCode);
+            return PhoneNumberUtil.GetInstance().IsValidNumber(number);
+        }
+        catch (NumberParseException)
+        {
+            return false;
+        }
+        catch (System.Exception)
+        {
+            return false;
+        }
     }
 }

@@ -9,6 +9,8 @@ public class OtpEntry
     public string Id { get; set; } = Guid.NewGuid().ToString("N");
     [Column(TypeName = "varchar(20)")]
     public string PhoneNumber { get; set; }
+    [Column(TypeName = "varchar(3)")]
+    public string CountryCode { get; set; }
     [Column(TypeName = "varchar(10)")]
     public string OtpCode { get; set; }
     public DateTime CreatedDate { get; set; }

@@ -25,6 +25,10 @@ namespace OtpCode.Api.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("varchar(36)");
 
+                    b.Property<string>("CountryCode")
+                        .IsRequired()
+                        .HasColumnType("varchar(3)");
+
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime(6)");
 

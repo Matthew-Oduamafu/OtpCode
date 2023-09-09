@@ -2,12 +2,12 @@
 {
     public static class CommonConstants
     {
-        public static void OtpCodePurpose()
+        public static class OtpCodePurpose
         {
-            const string PasswordReset = "PasswordReset";
-            const string TransactionConfirmation = "TransactionConfirmation";
-            const string EmailVerification = "EmailVerification";
-            const string PhoneVerification = "PhoneVerification";
+            public const string PasswordReset = "PasswordReset";
+            public const string TransactionConfirmation = "TransactionConfirmation";
+            public const string EmailVerification = "EmailVerification";
+            public const string PhoneVerification = "PhoneVerification";
         }
     }
 }
