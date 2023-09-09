@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace OtpCode.Api.Migrations
 {
     /// <inheritdoc />
-    public partial class Initialmigration : Migration
+    public partial class InitialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,7 +18,7 @@ namespace OtpCode.Api.Migrations
                 name: "OtpEntries",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "varchar(32)", nullable: false)
+                    Id = table.Column<string>(type: "varchar(36)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     PhoneNumber = table.Column<string>(type: "varchar(20)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -28,7 +28,7 @@ namespace OtpCode.Api.Migrations
                     ExpiryDate = table.Column<DateTime>(type: "datetime(6)", nullable: true),
                     IsUsed = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     InvalidAttempts = table.Column<int>(type: "int", nullable: false),
-                    Purpose = table.Column<string>(type: "longtext", nullable: true)
+                    Purpose = table.Column<string>(type: "varchar(50)", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Metadata = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")

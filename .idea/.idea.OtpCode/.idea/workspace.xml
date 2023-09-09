@@ -10,20 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44dd1c9a-d17b-4130-9e86-4bf6676822d3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.OtpCode/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.OtpCode/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.OtpCode/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.OtpCode/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Data/ApplicationDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Data/Entities/OtpEntry.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230908220944_Initial_migration.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230908220944_Initial_migration.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Options/DatabaseConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Options/DatabaseConfigSetup.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Extensions/ServiceCollectionExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Options/DatabaseConnect.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Repositories/Interfaces/IGenericSpcRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Repositories/Interfaces/IOtpCodeRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Repositories/Providers/GenericSpcRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Repositories/Providers/OtpCodeRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OtpCode/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OtpCode/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Data/Entities/OtpEntry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Data/Entities/OtpEntry.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230908220944_Initial_migration.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230908220944_Initial_migration.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/OtpCode.Api/OtpCode.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/OtpCode.Api.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OtpCode.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +31,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f237a55ab16d4649b96170604924f6b94bf450/6e/0f0757d4/DbMigration.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f237a55ab16d4649b96170604924f6b94bf450/a2/6a25d9d6/IDbMigration.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/eeaf281031b3ffe3d44a91e71a5808c8d236a9caabbb947871e6dc415bd8b/Migration.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo"><![CDATA[{
@@ -121,8 +125,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1694208262723</updated>
-      <workItem from="1694208264941" duration="2945000" />
+      <workItem from="1694208264941" duration="10531000" />
     </task>
+    <task id="LOCAL-00001" summary="add migration&#10;&#10;&#10;configured database setup&#10;run migrations">
+      <option name="closed" value="true" />
+      <created>1694211399594</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1694211399594</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,5 +144,7 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="add migration&#10;&#10;&#10;configured database setup&#10;run migrations" />
+    <option name="LAST_COMMIT_MESSAGE" value="add migration&#10;&#10;&#10;configured database setup&#10;run migrations" />
   </component>
 </project>

@@ -15,6 +15,7 @@ public class OtpEntry
     public DateTime? ExpiryDate { get; set; }
     public bool IsUsed { get; set; } = false;
     public int InvalidAttempts { get; set; }
+    [Column(TypeName = "varchar(50)")]
     public string? Purpose { get; set; } // Optional - why the OTP was generated.
     public string? Metadata { get; set; } // Optional - any additional data.
 }
