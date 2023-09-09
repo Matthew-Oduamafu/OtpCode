@@ -13,6 +13,7 @@ This API provides functionality to send, resend, and confirm one-time passwords 
 - **Dapper**: An efficient object-relational mapping (ORM) library for .NET.
 - **ASP.NET Core**: A cross-platform framework for building modern, cloud-based, internet-connected applications.
 - **MySQL**: A popular open-source relational database management system.
+- **Twilio SMS**: A third-party SMS gateway service that has the infrastructure to support worldwide SMS delivery.
 
 ## Getting Started
 
