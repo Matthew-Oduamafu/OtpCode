@@ -5,6 +5,8 @@ using OtpCode.Api.Data;
 using OtpCode.Api.Options;
 using OtpCode.Api.Repositories.Interfaces;
 using OtpCode.Api.Repositories.Providers;
+using OtpCode.Api.Services.Interfaces;
+using OtpCode.Api.Services.Providers;
 
 namespace OtpCode.Api.Extensions;
 
@@ -14,6 +16,12 @@ public static class ServiceCollectionExtensions
     {
         services.AddScoped<IGenericSpcRepository, GenericSpcRepository>();
         services.AddScoped<IOtpCodeRepository, OtpCodeRepository>();
+        return services;
+    }
+
+    public static IServiceCollection AddServices(this IServiceCollection services)
+    {
+        services.AddScoped<IOtpCodeService, OtpCodeService>();
         return services;
     }
 
@@ -35,13 +43,13 @@ public static class ServiceCollectionExtensions
                             TimeSpan.FromSeconds(databaseConfig.MaxRetryDelay),
                             databaseConfig.ErrorNumbersToAdd);
                     }
+
                     optionsBuilder.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName);
                 });
         });
-        services.AddTransient(typeof(DatabaseConnect));
         return services;
     }
-    
+
     public static IServiceCollection AddControllerConfiguration(this IServiceCollection services)
     {
         services.Configure<RouteOptions>(options => options.LowercaseUrls = true);

@@ -13,6 +13,7 @@ public class OtpEntry
     public string OtpCode { get; set; }
     public DateTime CreatedDate { get; set; }
     public DateTime? ExpiryDate { get; set; }
+    public DateTime? UpdatedAt { get; set; }
     public bool IsUsed { get; set; } = false;
     public int InvalidAttempts { get; set; }
     [Column(TypeName = "varchar(50)")]

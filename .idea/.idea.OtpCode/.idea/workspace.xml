@@ -10,19 +10,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44dd1c9a-d17b-4130-9e86-4bf6676822d3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Extensions/ServiceCollectionExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Options/DatabaseConnect.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Repositories/Interfaces/IGenericSpcRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Repositories/Interfaces/IOtpCodeRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Repositories/Providers/GenericSpcRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Repositories/Providers/OtpCodeRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Controllers/BaseController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Controllers/OtpController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230909005121_Added_UpdatedAt_Field_To_OtpEntry_Entity.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230909005121_Added_UpdatedAt_Field_To_OtpEntry_Entity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230909005812_Modify_Update_Stored_Proc_To_Include_UpdatedAt.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230909005812_Modify_Update_Stored_Proc_To_Include_UpdatedAt.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Models/Dtos/GenerateOtpCodeRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Models/Dtos/VerifyOtpCodeRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Models/GenericApiResponse.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Options/OtpCodeConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Repositories/Interfaces/IMySqlRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Repositories/Providers/MySqlRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Services/Interfaces/IOtpCodeService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Services/Providers/OtpCodeService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OtpCode.Api/Utils.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OtpCode/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OtpCode/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtpCode.Api/CommonConstants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/CommonConstants.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OtpCode.Api/Data/Entities/OtpEntry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Data/Entities/OtpEntry.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230908220944_Initial_migration.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Migrations/20230908220944_Initial_migration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Extensions/ServiceCollectionExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Extensions/ServiceCollectionExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Migrations/ApplicationDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Migrations/ApplicationDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Options/DatabaseConnect.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/OtpCode.Api/OtpCode.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/OtpCode.Api.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OtpCode.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Repositories/Interfaces/IOtpCodeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Repositories/Interfaces/IOtpCodeRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Repositories/Providers/GenericSpcRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Repositories/Providers/GenericSpcRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtpCode.Api/Repositories/Providers/OtpCodeRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/Repositories/Providers/OtpCodeRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OtpCode.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/OtpCode.Api/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +139,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1694208262723</updated>
-      <workItem from="1694208264941" duration="10531000" />
+      <workItem from="1694208264941" duration="18157000" />
     </task>
     <task id="LOCAL-00001" summary="add migration&#10;&#10;&#10;configured database setup&#10;run migrations">
       <option name="closed" value="true" />
@@ -135,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694211399594</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add stored proc&#10;&#10;&#10;Add stored for insert, update, get using code first approach">
+      <option name="closed" value="true" />
+      <created>1694219308933</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1694219308933</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,6 +167,26 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="add migration&#10;&#10;&#10;configured database setup&#10;run migrations" />
-    <option name="LAST_COMMIT_MESSAGE" value="add migration&#10;&#10;&#10;configured database setup&#10;run migrations" />
+    <MESSAGE value="add stored proc&#10;&#10;&#10;Add stored for insert, update, get using code first approach" />
+    <option name="LAST_COMMIT_MESSAGE" value="add stored proc&#10;&#10;&#10;Add stored for insert, update, get using code first approach" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/OtpCode.Api/Services/Providers/OtpCodeService.cs</url>
+          <line>54</line>
+          <properties documentPath="D:\Projects\3.OtpCode\OtpCode\OtpCode.Api\Services\Providers\OtpCodeService.cs" initialLine="54" containingFunctionPresentation="Method 'ResendOtpCodeAsync'">
+            <startOffsets>
+              <option value="1912" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2006" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

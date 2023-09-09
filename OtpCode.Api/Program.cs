@@ -1,10 +1,14 @@
 using OtpCode.Api.Extensions;
+using OtpCode.Api.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.Configure<OtpCodeConfig>(c =>
+    builder.Configuration.GetSection(nameof(OtpCodeConfig)).Bind(c));
 builder.Services.AddDatabaseConfiguration();
 builder.Services.AddRepositories();
+builder.Services.AddServices();
 
 
 builder.Services.AddControllerConfiguration();
